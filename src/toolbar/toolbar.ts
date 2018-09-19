@@ -18,7 +18,8 @@ export class Toolbar {
   private createToolbarButton(caption: string, command: string): void {
     const button = document.createElement('button');
     button.innerText = caption;
-    button.onclick = () => {
+    button.onclick = (event) => {
+      event.preventDefault();
       this.executeCommand(command);
     }
     this.ToolbarElement.appendChild(button);
