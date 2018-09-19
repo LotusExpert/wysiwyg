@@ -1,0 +1,34 @@
+@import "~font-awesome/css/font-awesome.css";
+@import "~roboto-fontface/css/roboto/roboto-fontface.css";
+
+html, body {
+  margin: 0;
+  min-width: 100%;
+  font-family: Roboto;
+}
+
+body {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+
+#editor {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+  #wysiwyg_toolbar {
+    height: 20px;
+    background-color: darkgrey;
+    border: 1px solid black;
+  }
+
+  #wysiwyg_area {
+    height: 300px;
+    overflow: scroll;
+    border: 1px solid blue;
+  }
+
+}
