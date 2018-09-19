@@ -1,6 +1,14 @@
 @import "~font-awesome/css/font-awesome.css";
 @import "~roboto-fontface/css/roboto/roboto-fontface.css";
 
+$beer-foam: #c5c7c8;
+$beer-one: #ffe500;
+$beer-two: #fdc400;
+$beer-three: #f49e00;
+$beer-four: #c58100;
+$beer-five: #9e6904;
+$beer-dark: #321a16;
+
 html, body {
   margin: 0;
   min-width: 100%;
@@ -13,22 +21,38 @@ body {
   min-height: 100%;
 }
 
-
 #editor {
   padding: 20px;
   display: flex;
   flex-direction: column;
 
+  #wysiwyg_wrapper {
+    box-shadow: 3px 3px 9px 0px rgba(0,0,0,0.55);
+  }
   #wysiwyg_toolbar {
     height: 20px;
-    background-color: darkgrey;
-    border: 1px solid black;
+    background-color: $beer-two;
+    border: 1px solid $beer-dark;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    button {
+      background-color: $beer-three;
+      color: $beer-dark;
+      font-weight: bold;
+      border: 1px solid $beer-two;
+      outline: 0;
+      margin-left: 2px;
+      text-transform: uppercase;
+    }
   }
 
   #wysiwyg_area {
     height: 300px;
     overflow: scroll;
-    border: 1px solid blue;
+    border: 1px solid #321a16;
+    outline: 0;
+    padding: 5px;
   }
 
 }
