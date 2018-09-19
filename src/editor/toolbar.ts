@@ -5,22 +5,10 @@ export class Toolbar {
   constructor() {
     this.ToolbarElement = document.createElement('div');
     this.ToolbarElement.id = 'wysiwyg_toolbar';
-  //  this.bold('B');
     this.createToolbarButton('B', 'bold');
     this.createToolbarButton('H1', 'h1');
 
   }
-
-/*   private bold(caption: string) {
-    const button = document.createElement('button');
-    button.classList.add('bold');
-    button.innerText = caption;
-    button.onclick = () => {
-      this.toggleBold();
-    }
-    this.ToolbarElement.appendChild(button);
-
-  } */
 
   private createToolbarButton(caption: string, command: string): void {
     const button = document.createElement('button');
@@ -43,17 +31,4 @@ export class Toolbar {
       default:
     }
   }
-
-/*
-  private hardCodedImage(caption: string) {
-    const imgUrl = 'https://qph.fs.quoracdn.net/main-qimg-938d4619ade43560eec771b8f991e18a-c';
-    const button = document.createElement('button');
-    button.classList.add('hard-code-image');
-    button.innerText = caption;
-    this.ToolbarElement.appendChild(button);
-  }
-
-  private toggleBold() {
-    document.execCommand('bold', true, null);
-  } */
 }

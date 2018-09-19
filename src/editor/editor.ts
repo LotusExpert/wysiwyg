@@ -6,7 +6,6 @@ export class Editor {
     private editorNode: Element;
     public editorArea: EditorArea;
     public toolbar: Toolbar;
-    // private sourceArea: Element;
 
     constructor(private eNode: Element){
         this.editorNode = eNode;
