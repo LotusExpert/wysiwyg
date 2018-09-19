@@ -1,3 +1,5 @@
+import { Config } from "../config/config";
+
 export class Toolbar {
 
   public ToolbarElement: Element;
@@ -5,9 +7,12 @@ export class Toolbar {
   constructor() {
     this.ToolbarElement = document.createElement('div');
     this.ToolbarElement.id = 'wysiwyg_toolbar';
-    this.createToolbarButton('B', 'bold');
-    this.createToolbarButton('H1', 'h1');
+  }
 
+  public createToolbarButtons(config: Config) {
+    for(const option of config.toolbarButtons) {
+      this.createToolbarButton(option.title, option.command);
+    }
   }
 
   private createToolbarButton(caption: string, command: string): void {
