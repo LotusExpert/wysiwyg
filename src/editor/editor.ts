@@ -10,13 +10,21 @@ export class Editor {
 
     constructor(private eNode: Element){
         this.editorNode = eNode;
+
         this.editorArea = new EditorArea();
         this.toolbar = new Toolbar();
     }
 
     public init(config?: Config): void {
       if(config != null) this.toolbar.createToolbarButtons(config);
-      this.editorNode.appendChild(this.toolbar.ToolbarElement);
-      this.editorNode.appendChild(this.editorArea.EditorAreaElement);
+
+      const wrapper = document.createElement('div');
+      wrapper.id = 'wysiwyg_wrapper';
+
+      wrapper.appendChild(this.toolbar.ToolbarElement);
+      wrapper.appendChild(this.editorArea.EditorAreaElement);
+
+      this.editorNode.appendChild(wrapper);
+
     }
 }
