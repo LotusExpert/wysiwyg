@@ -1,5 +1,6 @@
-import { Toolbar } from "./toolbar";
+import { Toolbar } from "../toolbar/toolbar";
 import { EditorArea } from "./editor-area";
+import { Config } from "../config/config";
 
 export class Editor {
 
@@ -13,9 +14,8 @@ export class Editor {
         this.toolbar = new Toolbar();
     }
 
-    public init(): void {
-      document.execCommand("defaultParagraphSeparator", false, "br");
-
+    public init(config?: Config): void {
+      if(config != null) this.toolbar.createToolbarButtons(config);
       this.editorNode.appendChild(this.toolbar.ToolbarElement);
       this.editorNode.appendChild(this.editorArea.EditorAreaElement);
     }
